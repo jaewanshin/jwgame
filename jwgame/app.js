@@ -1,13 +1,13 @@
-
 /**
  * Module dependencies.
  */
 
-var express = require('express')
-  , routes = require('./routes')
-  , user = require('./routes/user')
-  , http = require('http')
-  , path = require('path');
+var express = require('express'), 
+        routes = require('./routes'), 
+        user = require('./routes/user'), 
+        http = require('http'), 
+        socketio = require("socket.io"),
+        path = require('path');
 
 var app = express();
 
@@ -24,12 +24,78 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // development only
 if ('development' == app.get('env')) {
-  app.use(express.errorHandler());
+	app.use(express.errorHandler());
 }
 
 app.get('/', routes.index);
 app.get('/users', user.list);
 
-http.createServer(app).listen(app.get('port'), function(){
-  console.log('Express server listening on port ' + app.get('port'));
+var server = http.createServer(app).listen(app.get('port'), function() {
+	console.log('Express server listening on port ' + app.get('port'));
+});
+
+app.get("/", function(req, res) {
+	res.sendfile(__dirname + "/index.html");
+});
+
+
+var playRoomList = {
+		'room1' : [ 
+		            {username: '', isready: false}
+		          ]
+};
+
+
+var io = socketio.listen(server);
+io.sockets.on("connection", function(socket) {
+
+	io.sockets.emit("roomlist", playRoomList);
+	socket.on("adduser", function(data) {
+		console.log("adduser username :", data);
+		socket.username = data;
+	});
+
+	socket.on("createroom", function(data) {
+		console.log("createroom :", playRoomList[data.roomname]);
+		if(playRoomList[data.roomname] == undefined) {
+			var player = {
+				username: '',
+				isready: true 
+			}
+			console.log("username :", socket.username);
+			player.username = data.username;
+			playRoomList[data.roomname] = [];
+			playRoomList[data.roomname].push(player);
+		} else {
+		}
+        socket.join(data.roomname);
+		io.sockets.emit("roomlist", playRoomList);
+        socket.broadcast.to("/" + data.roomname).emit('playgame', playRoomList[data]);
+	});
+	
+	
+	socket.on("joinroom", function(data) {
+		console.log("joinroom :", playRoomList[data.roomname]);
+//		var rooms = io.sockets.manager.rooms;
+		if(playRoomList[data.roomname].length > 2) {
+			io.sockets.emit("roomlist", playRoomList);
+			return;
+		}
+
+		socket.join(data.roomname);
+        socket.broadcast.to(data.roomname).emit('playgame', playRoomList[data]);
+		io.sockets.emit("roomlist", playRoomList);
+	});
+	
+	socket.on("playgame", function(data) {
+		switch (data.type) {
+			case "start":
+				playRoomList[data.roomname][data.username].isReady = true;
+				break;
+			case "ready":
+				break;
+			case "steady":
+				break;
+		}
+	});
 });
