@@ -12,7 +12,7 @@ var express = require('express'),
 var app = express();
 
 // all environments
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 80);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
 app.use(express.favicon());
@@ -34,9 +34,10 @@ var server = http.createServer(app).listen(app.get('port'), function() {
 	console.log('Express server listening on port ' + app.get('port'));
 });
 
-app.get("/", function(req, res) {
-	res.sendfile(__dirname + "/index.html");
-});
+//app.get("*", function(req, res) {
+//	console.log("aaa");
+//	 res.redirect(__dirname + 'public/first_abc/index.html');
+//});
 
 
 var playRoomList = {
