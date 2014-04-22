@@ -1,0 +1,366 @@
+ body {
+	background-color: black;
+}
+
+#gamemenu {
+	background-color: #373737;
+	border-radius: 5px;
+	margin: 10px auto;
+	width: 440px;
+	height: 80px;
+}
+
+#gamemenu div {
+	background-color: #4A4A4A;
+	text-align: center;
+	font-weight: bold;
+	border-radius: 5px;
+}
+
+.menu_container {
+	float: right;
+	width: 100px;
+	height: 60px;
+	margin: 10px 5px 5px 5px;
+}
+
+.menu_container div {
+	float: initial;
+}
+.menu_title{
+	margin-top: 5px;
+}
+.menu_text{
+	margin-top: 10px;
+	color: #8A8A8A;
+}
+
+#bg_wrap {
+	background-color: #373737;
+	width: 440px;
+	height: 440px;
+	border-radius: 5px;
+	padding: 5px;
+	margin: 0 auto;
+}
+
+#bg_wrap ul {
+	list-style:none;
+	margin: 0px;
+	padding: 0px;
+}
+
+.item_tile {
+	background-color: #4A4A4A;
+	float: left;
+	width: 100px;
+	height: 100px;
+	border-radius: 5px;
+	margin: 5px;
+	text-align: center;
+	line-height: 100px;
+}
+
+.item_text {
+	position: absolute;
+	text-align: center;
+	font-weight: bold;
+	font-size: 35px;
+	background-color: #545454;
+	color: #DAD9DA;
+	width: 100px;
+	height: 100px;
+	border-radius: 5px;
+	margin: 5px;
+	line-height: 100px;
+	-webkit-transition: all 0.1s linear;
+	-moz-transition: all 0.1s linear;
+	transform: all 0.1s linear;
+	-o-transition: all 0.1s linear;
+	-ms-transition: all 0.1s linear;
+}
+
+#game_over {
+	text-align: center;
+	font-weight: bold;
+	line-height: 400px;
+	font-size: 35px;
+	color: #FF0000;
+	background-color: #B7B7B7;
+	width: 450px;
+	height: 450px;
+	border-radius: 5px;
+	margin: -5px;
+	position: absolute;	
+    opacity: 0.5; 
+    z-index: 1;
+}
+
+.item_text_4 {
+	background-color: #6C6C6C;
+	color: #DAD9DA;
+}
+
+.item_text_8 {
+	background-color: #405F94;
+	color: #DAD9DA;
+}
+
+.item_text_16 {
+	background-color: #5076B7;
+	color: #DAD9DA;
+}
+
+.item_text_32 {
+	background-color: #5E8AD5;
+	color: #DAD9DA;
+}
+
+.item_text_64 {
+	background-color: #6A9BF0;
+	color: #DAD9DA;
+}
+
+.item_text_128 {
+	background-color: #70A5FF;
+	color: #DAD9DA;
+}
+
+.item_text_256 {
+	background-color: #446D37;
+	color: #F3F3F3;
+}
+
+.item_text_512 {
+	background-color: #568946;
+	color: #F3F3F3;
+}
+
+.item_text_1024 {
+	background-color: #6AA558;
+	color: #F3F3F3;
+}
+
+.item_text_2048 {
+	background-color: #BD64AD;
+	color: #F3F3F3;
+}
+
+.item_text_4096 {
+	background-color: #FC4E70;
+	color: #F3F3F3;
+}
+
+.item_text_8192 {
+	background-color: #6C6C6C;
+}
+.item_0_0 {
+	-webkit-transform: translate(0px, 0px);
+	-moz-transform: translate(0px, 0px);
+	transform: translate(0, 0); 
+}
+.item_0_1 {
+	-webkit-transform: translate(110px, 0px);
+	-moz-transform: translate(110px, 0px);
+	transform: translate(110, 0); 
+}
+.item_0_2 {
+	-webkit-transform: translate(220px, 0px);
+	-moz-transform: translate(220px, 0px);
+	transform: translate(220, 0); 
+}
+.item_0_3 {
+	-webkit-transform: translate(330px, 0px);
+	-moz-transform: translate(330px, 0px);
+	transform: translate(330, 0); 
+}
+.item_1_0 {
+	-webkit-transform: translate(0px, 110px);
+	-moz-transform: translate(0px, 110px);
+	transform: translate(0, 110); 
+}	
+.item_1_1 {
+	-webkit-transform: translate(110px, 110px);
+	-moz-transform: translate(110px, 110px);
+	transform: translate(110, 110); 
+}	
+.item_1_2 {
+	-webkit-transform: translate(220px, 110px);
+	-moz-transform: translate(220px, 110px);
+	transform: translate(220, 110); 
+}	
+.item_1_3 {
+	-webkit-transform: translate(330px, 110px);
+	-moz-transform: translate(330px, 110px);
+	transform: translate(330, 110); 
+}	
+.item_2_0 {
+	-webkit-transform: translate(0px, 220px);
+	-moz-transform: translate(0px, 220px);
+	transform: translate(0, 220); 
+}	
+.item_2_1 {
+	-webkit-transform: translate(110px, 220px);
+	-moz-transform: translate(110px, 220px);
+	transform: translate(110, 220); 
+}	
+.item_2_2 {
+	-webkit-transform: translate(220px, 220px);
+	-moz-transform: translate(220px, 220px);
+	transform: translate(220, 220); 
+}	
+.item_2_3 {
+	-webkit-transform: translate(330px, 220px);
+	-moz-transform: translate(330px, 220px);
+	transform: translate(330, 220); 
+}	
+.item_3_0 {
+	-webkit-transform: translate(0px, 330px);
+	-moz-transform: translate(0px, 330px);
+	transform: translate(0, 330); 
+}	
+.item_3_1 {
+	-webkit-transform: translate(110px, 330px);
+	-moz-transform: translate(110px, 330px);
+	transform: translate(110, 330); 
+}	
+.item_3_2 {
+	-webkit-transform: translate(220px, 330px);
+	-moz-transform: translate(220px, 330px);
+	transform: translate(220, 330); 
+}	
+.item_3_3 {
+	-webkit-transform: translate(330px, 330px);
+	-moz-transform: translate(330px, 330px);
+	transform: translate(330, 330); 
+}	
+
+@media screen and (max-width:520px){
+	#gamemenu {
+		background-color: #373737;
+		border-radius: 5px;
+		margin: 10px auto;
+		width: 296px;
+		height: 100px;
+	}
+
+	#bg_wrap {
+		background-color: #373737;
+		width: 296px;
+		height: 296px;
+		border-radius: 5px;
+		padding: 5px;
+		margin: 0 auto;
+	}
+
+	.item_tile {
+		background-color: #4A4A4A;
+		float: left;
+		width: 70px;
+		height: 70px;
+		border-radius: 4px;
+		margin: 2px;
+		text-align: center;
+		line-height: 70px;
+	}
+	.item_text {
+		position: absolute;
+		text-align: center;
+		font-weight: bold;
+		font-size: 35px;
+		background-color: #545454;
+		color: #545454;
+		color: #8A8A8A;
+		width: 70px;
+		height: 70px;
+		border-radius: 4px;
+		margin: 2px;
+		line-height: 70px;
+		-webkit-transition: all 0.1s linear;
+		-moz-transition: all 0.1s linear;
+		transform: all 0.1s linear;
+		-o-transition: all 0.1s linear;
+		-ms-transition: all 0.1s linear;
+	}
+
+	.item_0_0 {
+	-webkit-transform: translate(0px, 0px);
+	-moz-transform: translate(0px, 0px);
+	transform: translate(0, 0); 
+	}
+	.item_0_1 {
+		-webkit-transform: translate(74px, 0px);
+		-moz-transform: translate(74px, 0px);
+		transform: translate(74, 0); 
+	}
+	.item_0_2 {
+		-webkit-transform: translate(148px, 0px);
+		-moz-transform: translate(148px, 0px);
+		transform: translate(148, 0); 
+	}
+	.item_0_3 {
+		-webkit-transform: translate(222px, 0px);
+		-moz-transform: translate(222px, 0px);
+		transform: translate(222, 0); 
+	}
+	.item_1_0 {
+		-webkit-transform: translate(0px, 74px);
+		-moz-transform: translate(0px, 74px);
+		transform: translate(0, 74); 
+	}	
+	.item_1_1 {
+		-webkit-transform: translate(74px, 74px);
+		-moz-transform: translate(74px, 74px);
+		transform: translate(74, 74); 
+	}	
+	.item_1_2 {
+		-webkit-transform: translate(148px, 74px);
+		-moz-transform: translate(148px, 74px);
+		transform: translate(148, 74); 
+	}	
+	.item_1_3 {
+		-webkit-transform: translate(222px, 74px);
+		-moz-transform: translate(222px, 74px);
+		transform: translate(222, 74); 
+	}	
+	.item_2_0 {
+		-webkit-transform: translate(0px, 148px);
+		-moz-transform: translate(0px, 148px);
+		transform: translate(0, 148); 
+	}	
+	.item_2_1 {
+		-webkit-transform: translate(74px, 148px);
+		-moz-transform: translate(74px, 148px);
+		transform: translate(74, 148); 
+	}	
+	.item_2_2 {
+		-webkit-transform: translate(148px, 148px);
+		-moz-transform: translate(148px, 148px);
+		transform: translate(148, 148); 
+	}	
+	.item_2_3 {
+		-webkit-transform: translate(222px, 148px);
+		-moz-transform: translate(222px, 148px);
+		transform: translate(222, 148); 
+	}	
+	.item_3_0 {
+		-webkit-transform: translate(0px, 222px);
+		-moz-transform: translate(0px, 222px);
+		transform: translate(0, 222); 
+	}	
+	.item_3_1 {
+		-webkit-transform: translate(74px, 222px);
+		-moz-transform: translate(74px, 222px);
+		transform: translate(74, 222); 
+	}	
+	.item_3_2 {
+		-webkit-transform: translate(148px, 222px);
+		-moz-transform: translate(148px, 222px);
+		transform: translate(148, 222); 
+	}	
+	.item_3_3 {
+		-webkit-transform: translate(222px, 222px);
+		-moz-transform: translate(222px, 222px);
+		transform: translate(222, 222); 
+	}
+}
